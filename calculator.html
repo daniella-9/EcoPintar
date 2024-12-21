@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Kalkulator Karbon</title>
+
+  <link href="assets/img/logo.png" rel="icon">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<style>
+  :root {
+    --primary-color: #6aa84f;
+    --secondary-color: #27ae60;
+    --background-color: #e6f3e8;
+    --text-color: #2c3e50;
+    --card-background: #ffffff;
+    --border-radius: 12px;
+  }
+
+  #total-emission {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .btn-calculate {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+  }
+
+  .btn-calculate:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .btn-calculate i {
+    margin-right: 10px;
+  }
+</style>
+
+<body class="blog-details-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="ccontainer-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <img src="assets/img/logo.png" alt="">
+        <h1 class="sitename">EcoPintar</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home<br></a></li>
+          <li><a href="calculator.html" class="active">Kalkulator Karbon</a></li>
+          <li><a href="eco-friendly.html">Produk Ramah Lingkungan</a></li>
+          <li><a href="tips-panduan.html">Tips dan Panduan</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/title.png);">
+      <div class="container position-relative">
+        <h1>Kalkulator Jejak Karbon </h1>
+        <p>Setiap Langkah Kecil yang Kita Ambil Hari Ini, Menciptakan Dampak Positif yang Besar untuk Masa Depan Bumi
+          yang Lebih Hijau dan Sejahtera</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li class="current">Kalkulator Jejak Karbon</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- End Page Title -->
+
+    <!--Kalkulator-->
+    <div class="container" style="margin-top: 50px; margin-bottom: 5%;">
+      <h2 class="text-center mb-5">Calculate Your Carbon Footprint</h2>
+      <div class="h-100 d-flex align-items-center justify-content-center">
+        <form method="POST">
+          <!-- Electricity Section -->
+          <div class="accordion" id="carbonAccordion">
+            <!-- Electricity Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#electricitySection">
+                  <i class="fas fa-bolt text-warning me-2"></i> Electricity Usage
+                </button>
+              </h2>
+              <div id="electricitySection" class="accordion-collapse collapse show" data-bs-parent="#carbonAccordion">
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <h6 class="mb-2">LED Light</h6>
+                        <div class="d-flex align-items-center">
+                          <div class="me-3">
+                            <label for="led-power" class="form-label">Power (Watt):</label>
+                            <input type="number" id="led-power" class="form-control electricity-input"
+                              placeholder="e.g., 10" />
+                          </div>
+                          <div>
+                            <label for="led-time" class="form-label">Time (hrs):</label>
+                            <input type="number" id="led-time" class="form-control electricity-input"
+                              placeholder="e.g., 5" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- AC -->
+                      <div class="mb-3">
+                        <h6 class="mb-2">AC</h6>
+                        <div class="d-flex align-items-center">
+                          <div class="me-3">
+                            <label for="ac-power" class="form-label">Power (Watt):</label>
+                            <input type="number" id="ac-power" class="form-control electricity-input"
+                              placeholder="e.g., 1000" />
+                          </div>
+                          <div>
+                            <label for="ac-time" class="form-label">Time (hrs):</label>
+                            <input type="number" id="ac-time" class="form-control electricity-input"
+                              placeholder="e.g., 8" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Refrigerator -->
+                      <div class="mb-3">
+                        <h6 class="mb-2">Refrigerator</h6>
+                        <div class="d-flex align-items-center">
+                          <div class="me-3">
+                            <label for="fridge-power" class="form-label">Power (Watt):</label>
+                            <input type="number" id="fridge-power" class="form-control electricity-input"
+                              placeholder="e.g., 150" />
+                          </div>
+                          <div>
+                            <label for="fridge-time" class="form-label">Time (hrs):</label>
+                            <input type="number" id="fridge-time" class="form-control electricity-input"
+                              placeholder="e.g., 24" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                      <label class="form-label-emissions">Carbon Emissions:</label>
+                      <div class="d-flex align-items-center">
+                        <input type="text" id="electricity-emission" value="0" readonly
+                          class="form-control text-end fw-bold bg-light me-2 w-50" />
+                        <span class="fw-bold text-muted">KG</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Waste Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#wasteSection">
+                  <i class="fas fa-recycle text-success me-2"></i> Waste Contribution
+                </button>
+              </h2>
+              <div id="wasteSection" class="accordion-collapse collapse" data-bs-parent="#carbonAccordion">
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row mb-2 align-items-center">
+                        <label class="col-6 form-label">
+                          <i class="fas fa-trash-alt text-danger me-1"></i> Plastik (Kg) : 
+                        </label>
+                        <input type="number" id="waste-plastik" class="form-control waste-input"
+                          placeholder="e.g., 1" />
+                      </div>
+                      <div class="row mb-2 align-items-center">
+                        <label class="col-6 form-label">
+                          <i class="fas fa-cogs text-secondary me-1"></i> Logam (Kg) :
+                        </label>
+                        <input type="number" id="waste-logam" class="form-control waste-input" placeholder="e.g., 2" />
+                      </div>
+                      <div class="row mb-2 align-items-center">
+                        <label class="col-6 form-label">
+                          <i class="fas fa-glass-martini text-info me-1"></i> Kaca (Kg) :
+                        </label>
+                        <input type="number" id="waste-kaca" class="form-control waste-input" placeholder="e.g., 0.5" />
+                      </div>
+                      <div class="row mb-2 align-items-center">
+                        <label class="col-6 form-label">
+                          <i class="fas fa-file-alt text-primary me-1"></i> Kertas (Kg) :
+                        </label>
+                        <input type="number" id="waste-kertas" class="form-control waste-input" placeholder="e.g., 1" />
+                      </div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                      <label class="form-label-emissions">Carbon Emissions:</label>
+                      <div class="d-flex align-items-center">
+                        <input type="text" id="waste-emission" value="0" readonly
+                          class="form-control text-end fw-bold bg-light me-2 w-50" />
+                        <span class="fw-bold text-muted">KG</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Fuel Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#fuelSection">
+                  <i class="fas fa-gas-pump text-danger me-2"></i> Fuel Consumption
+                </button>
+              </h2>
+              <div id="fuelSection" class="accordion-collapse collapse" data-bs-parent="#carbonAccordion">
+                <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="row mb-2 align-items-center">
+                        <label class="col-6 form-label">
+                          <i class="fas fa-car text-warning me-2"></i> Bensin (Liter) :
+                        </label>
+                        <input type="number" id="fuel-bensin" class="form-control fuel-input" placeholder="e.g., 5" />
+                      </div>
+                      <div class="row mb-2 align-items-center">
+                        <label class="col-6 form-label">
+                          <i class="fas fa-truck text-secondary me-2"></i> Solar (Liter) :
+                        </label>
+                        <input type="number" id="fuel-solar" class="form-control fuel-input" placeholder="e.g., 3" />
+                      </div>
+                      <div class="row mb-2 align-items-center">
+                        <label class="col-6 form-label">
+                          <i class="fas fa-gas-pump text-info me-2"></i> Pertalite (Liter) :
+                        </label>
+                        <input type="number" id="fuel-pertalite" class="form-control fuel-input"
+                          placeholder="e.g., 4" />
+                      </div>
+                      <div class="row mb-2 align-items-center">
+                        <label class="col-6 form-label">
+                          <i class="fas fa-oil-can text-primary me-2"></i> Pertamax (Liter) :
+                        </label>
+                        <input type="number" id="fuel-pertamax" class="form-control fuel-input" placeholder="e.g., 3" />
+                      </div>
+                      <div class="row mb-2 align-items-center">
+                        <label class="col-6 form-label">
+                          <i class="fas fa-leaf text-success me-2"></i> Biodiesel (Liter) :
+                        </label>
+                        <input type="number" id="fuel-biodiesel" class="form-control fuel-input"
+                          placeholder="e.g., 2" />
+                      </div>
+                      <!-- <div class="row mb-2 align-items-center">
+                          <label class="col-6 form-label">
+                            <i class="fas fa-vial text-danger me-2"></i> Ethanol :
+                          </label>
+                          <input
+                            type="number"
+                            id="fuel-ethanol"
+                            class="form-control fuel-input"
+                            placeholder="e.g., 5"
+                          />
+                        </div>-->
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                      <label class="form-label-emissions">Carbon Emissions:</label>
+                      <div class="d-flex align-items-center">
+                        <input type="text" id="fuel-emission" value="0" readonly
+                          class="form-control text-end fw-bold bg-light me-2 w-50" />
+                        <span class="fw-bold text-muted">KG</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    <!-- Total Emissions -->
+    <div class="text-center my-4">
+      <h4 class="fw-bold">
+        <i class="fas fa-leaf text-success me-2"></i> Total Carbon
+        Emissions:
+        <span id="total-emission" class="text-success">0</span> kgCO2
+      </h4>
+    </div>
+
+    <!-- Emission Level and Tree Recommendation -->
+    <div class="text-center my-4">
+      <h5 id="emission-level" class="fw-bold text-warning"></h5>
+      <p id="tree-recommendation" class="text-muted"></p>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+      <button type="button" id="calculate-total" class="btn btn-calculate">
+        <i class="fas fa-calculator me-2"></i> Calculate
+      </button>
+    </div>
+    </form>
+    </div>
+    </div>
+  </main>
+</body>
+
+<!-- Footer -->
+<footer id="footer" class="footer dark-background">
+  <div class="copyright">
+    <div class="container text-center">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename" style="color:#6aa84f;">EcoPintar</strong> <span>All
+          Rights Reserved</span></p>
+    </div>
+    <div style="text-align: center;">
+      Calculator by Doffannoel Sihotang</a>
+    </div>
+  </div>
+  </div>
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>
+
+
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const electricityFactor = 0.85; // kg CO2 per kWh
+  const wasteFactors = {
+    Plastik: 2.5,
+    Logam: 1.2,
+    Kaca: 0.9,
+    Kertas: 0.5,
+  };
+  const fuelFactors = {
+    Bensin: 2.3,
+    Solar: 2.6,
+    LPG: 1.5,
+    Pertalite: 2.1,
+    Pertamax: 2.0,
+    Biodiesel: 1.8,
+    Ethanol: 1.5,
+  };
+
+  // Function to format numbers with comma
+  function formatNumberWithComma(number) {
+    return number.toFixed(4).replace(".", ",");
+  }
+
+  // Function to parse formatted number back to float
+  function parseFormattedNumber(formattedNumber) {
+    return parseFloat(formattedNumber.replace(",", "."));
+  }
+
+  // Function to calculate total waste emissions
+  function calculateTotalWasteEmissions() {
+    let totalWasteEmission = 0;
+
+    Object.keys(wasteFactors).forEach((type) => {
+      const input = document.querySelector(`#waste-${type.toLowerCase()}`);
+      if (input) {
+        const total = parseFloat(input.value) || 0;
+        totalWasteEmission += total * wasteFactors[type];
+      }
+    });
+
+    document.querySelector("#waste-emission").value = formatNumberWithComma(totalWasteEmission);
+  }
+
+  // Function to calculate total fuel emissions
+  function calculateTotalFuelEmissions() {
+    let totalFuelEmission = 0;
+
+    Object.keys(fuelFactors).forEach((type) => {
+      const input = document.querySelector(`#fuel-${type.toLowerCase()}`);
+      if (input) {
+        const total = parseFloat(input.value) || 0;
+        totalFuelEmission += total * fuelFactors[type];
+      }
+    });
+
+    document.querySelector("#fuel-emission").value = formatNumberWithComma(totalFuelEmission);
+  }
+
+  // Calculate electricity emissions
+  function calculateElectricityEmissions() {
+    let totalElectricityEmission = 0;
+
+    // Calculate for LED
+    const ledPower = parseFloat(document.querySelector("#led-power").value) || 0;
+    const ledTime = parseFloat(document.querySelector("#led-time").value) || 0;
+    totalElectricityEmission += (ledPower / 1000) * ledTime * electricityFactor;
+
+    // Calculate for AC
+    const acPower = parseFloat(document.querySelector("#ac-power").value) || 0;
+    const acTime = parseFloat(document.querySelector("#ac-time").value) || 0;
+    totalElectricityEmission += (acPower / 1000) * acTime * electricityFactor;
+
+    // Calculate for Refrigerator
+    const fridgePower = parseFloat(document.querySelector("#fridge-power").value) || 0;
+    const fridgeTime = parseFloat(document.querySelector("#fridge-time").value) || 0;
+    totalElectricityEmission += (fridgePower / 1000) * fridgeTime * electricityFactor;
+
+    document.querySelector("#electricity-emission").value = formatNumberWithComma(totalElectricityEmission);
+  }
+
+  // Attach event listeners
+  document.querySelectorAll(".electricity-input").forEach((input) => {
+    input.addEventListener("input", calculateElectricityEmissions);
+  });
+
+  document.querySelectorAll(".waste-input").forEach((input) => {
+    input.addEventListener("input", calculateTotalWasteEmissions);
+  });
+
+  document.querySelectorAll(".fuel-input").forEach((input) => {
+    input.addEventListener("input", calculateTotalFuelEmissions);
+  });
+
+  // Calculate total emissions and provide analysis
+  document.querySelector("#calculate-total").addEventListener("click", () => {
+    const electricity = parseFormattedNumber(document.querySelector("#electricity-emission").value) || 0;
+    const waste = parseFormattedNumber(document.querySelector("#waste-emission").value) || 0;
+    const fuel = parseFormattedNumber(document.querySelector("#fuel-emission").value) || 0;
+
+    const total = electricity + waste + fuel;
+
+    // Display total emissions
+    document.querySelector("#total-emission").textContent = formatNumberWithComma(total);
+
+    // Analyze emission level
+    const emissionLevelElement = document.querySelector("#emission-level");
+    const treeRecommendationElement = document.querySelector("#tree-recommendation");
+
+    if (total < 100) {
+      emissionLevelElement.textContent = "Your carbon emission level is GOOD!";
+      emissionLevelElement.className = "fw-bold text-success";
+    } else if (total >= 100 && total <= 300) {
+      emissionLevelElement.textContent = "Your carbon emission level is AVERAGE.";
+      emissionLevelElement.className = "fw-bold text-warning";
+    } else {
+      emissionLevelElement.textContent = "Your carbon emission level is HIGH!";
+      emissionLevelElement.className = "fw-bold text-danger";
+    }
+
+    // Calculate tree planting recommendation
+    // Assume 1 tree offsets 21kg of CO2 annually
+    const treesNeeded = Math.ceil(total / 21);
+    treeRecommendationElement.textContent = `To offset your emissions, you need to plant approximately ${treesNeeded} tree(s).`;
+  });
+</script>
+</body>
+
+</html>
